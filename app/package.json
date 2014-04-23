@@ -10,6 +10,8 @@
   "author": "Scott Mebberson",
   "license": "ISC",
   "dependencies": {
-    "linz": "git://github.com/smebberson/linz.git#new"
+    "linz": "git://github.com/smebberson/linz.git#new",
+    "mongoose": "3.8.x",
+    "express": "4.0.x"
   }
 }
