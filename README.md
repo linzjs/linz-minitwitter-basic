@@ -1,16 +1,15 @@
-linz-minitwitter
-================
+linz-minitwitter-basic
+======================
 
-An example of using Linz, to build a mini-twitter
+An example of using Linz, to build a mini-twitter.
 
-Linz is heavily customisable, and there are two servers that you can run as examples.
+Linz is heavily customisable, however, this example shows how little work is required to get up and running with Linz.
 
-node server.js
---------------
+Usage
+-----
 
-This is a plain setup for Linz, with less customisation.
+`node server.js`
 
-node alternative.js
--------------------
+OR to view in debug mode
 
-This is a highly customized setup for Linz.
+`DEBUG=linz:* node server.js`
