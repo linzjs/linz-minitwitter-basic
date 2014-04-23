@@ -8,8 +8,6 @@ linz.init({
 	mongo: 'mongodb://localhost/linzminitwitter'
 });
 
-routes = require('./lib/loader')('./routes');
-
 linz.app.get('/', routes.home);
 
 // start the app
