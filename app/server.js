@@ -5,7 +5,8 @@ var http = require('http'),
 
 // initialize linz, without express (it will be provided)
 linz.init({
-	mongo: 'mongodb://localhost/linzminitwitter'
+	mongo: 'mongodb://localhost/linzminitwitter',
+	'user model': 'mtUser'
 });
 
 linz.app.get('/', routes.home);
