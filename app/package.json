@@ -1,7 +1,7 @@
 {
   "name": "linz-minitwitter",
-  "version": "0.0.1",
-  "description": "An example of using linz to build a mini-twitter.",
+  "version": "0.1.0",
+  "description": "An example of using Linz to build a mini-twitter.",
   "main": "server.js",
   "repository": {
     "type": "git",
@@ -10,8 +10,7 @@
   "author": "Scott Mebberson",
   "license": "ISC",
   "dependencies": {
-    "linz": "git://github.com/smebberson/linz.git#new",
-    "mongoose": "3.8.x",
+    "linz": "git://github.com/smebberson/linz.git#v0.4.0.1",
     "express": "4.0.x"
   }
 }

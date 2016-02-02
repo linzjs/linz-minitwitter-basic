@@ -12,21 +12,55 @@ var mtUserSchema = new linz.mongoose.Schema({
 });
 
 // add the formtools plugin
-mtUserSchema.plugin(linz.formtools.plugin, {
-	columns: {
-		name: 'Name',
-		email: 'Email',
-		bAdmin: 'Is Admin'
+mtUserSchema.plugin(linz.formtools.plugins.document, {
+	model: {
+        label: 'User',
+        description: 'Manage users.'
+    },
+	grid: {
+		columns: {
+			name: 'Name',
+			email: 'Email',
+			bAdmin: 'Has admin access?'
+		}
 	},
-	usePublishingDate: false,
-	usePublishingStatus: false
+	form: {
+		name: {
+			label: 'Name',
+			fieldset: 'Details',
+			helpText: 'The users full name.'
+		},
+		email: {
+			label: 'Email',
+			fieldset: 'Details'
+		},
+		username: {
+			label: 'Username',
+			fieldset: 'Access'
+		},
+		password: {
+			label: 'Password',
+			fieldset: 'Access',
+			widget: linz.formtools.widgets.password()
+		},
+		bAdmin: {
+			label: 'Has admin access?',
+			fieldset: 'Access',
+			helpText: 'This controls if the user has access to admin.'
+		}
+	},
+	fields: {
+		usePublishingDate: false,
+		usePublishingStatus: false
+	}
 });
 
 mtUserSchema.virtual('hasAdminAccess').get(function () {
 	return this.bAdmin === true;
 });
 
-var mtUser = module.exports = linz.mongoose.model('mtUser', mtUserSchema);
+mtUserSchema.methods.verifyPassword = function (candidatePassword, callback) {
+	return callback(null, this.password === candidatePassword);
+}
 
-mtUser.label = 'Users';
-mtUser.singular = 'User';
+var mtUser = module.exports = linz.mongoose.model('mtUser', mtUserSchema);
