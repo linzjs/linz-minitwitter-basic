@@ -38,19 +38,22 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # configuration step 2: git
   config.vm.provision "shell", path: "vagrant/git.sh"
 
-  # configuration step 3: nodejs
+  # configuration step 3: hub cli
+  config.vm.provision "shell", path: "vagrant/hub.sh"
+
+  # configuration step 4: nodejs
   config.vm.provision "shell", path: "vagrant/nodejs.sh"
 
-  # configuration step 4: mongodb
+  # configuration step 5: mongodb
   config.vm.provision "shell", path: "vagrant/mongodb.sh"
 
-  # configuration step 5: env
+  # configuration step 6: env
   config.vm.provision "shell", path: "vagrant/env.sh"
 
-  # configuration step 5: setup
+  # configuration step 7: setup
   config.vm.provision "shell", path: "vagrant/setup.sh"
 
-  # configuration step 6: clean (remove unccessary data and GBs)
+  # configuration step 8: clean (remove unccessary data and GBs)
   config.vm.provision "shell", path: "vagrant/clean.sh"
 
 end
