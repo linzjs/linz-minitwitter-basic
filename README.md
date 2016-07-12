@@ -20,6 +20,7 @@ The following should get you up and running in no time:
 - Once the VM has been setup, run `vagrant ssh` on your host to gain access to the VM.
 - In the guest, run `cd /vagrant/app`.
 - In the guest, install the Node.js modules with `npm install`.
+- In the guest, run `npm link linz` - this will use the local version of linz running on your guest machine
 - In the guest, to start the Node.js server and example app, run `node server.js` or to view in debug mode `DEBUG=linz:general,linz:error,linz:models,linz:formtools,linz:configs node server.js`.
 - You should be able to visit http://192.168.90.3:3700/ in your browser to visit linz-mini-twitter.
 

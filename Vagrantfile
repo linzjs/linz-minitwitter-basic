@@ -8,11 +8,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Every Vagrant virtual environment requires a box to build off of.
   config.vm.box = "phusion/ubuntu-14.04-amd64"
 
-  config.vm.provider "vmware_fusion" do |v|
-    v.vmx["memsize"] = "400"
-    v.vmx["numvcpus"] = "1"
-  end
-
   # define the hostname
   config.vm.hostname = 'linzminitwitterbasic'
 
