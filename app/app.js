@@ -1,7 +1,7 @@
 var http = require('http'),
 	linz = require('linz'),
 	routes = require('./lib/loader')('./routes'),
-	port = 3700;
+	port = process.env.APP_PORT || 4000;
 
 module.exports = function () {
 
