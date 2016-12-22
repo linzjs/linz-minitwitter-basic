@@ -16,37 +16,63 @@ mtUserSchema.plugin(linz.formtools.plugins.document, {
 	model: {
         label: 'User',
         description: 'Manage users.'
-    },
-	grid: {
-		columns: {
+  },
+	labels: {
 			name: 'Name',
 			email: 'Email',
-			bAdmin: 'Has admin access?'
+			bAdmin: 'has admin access?',
+			username: 'User Name',
+			password: 'Password'
+	},
+	permissions: function (user, callback) {
+
+		// Default empty object, which Linz can accept.
+			// Defaults everything to true.
+			var perms = {
+					canCreate: false,
+					canDelete: false
+			};
+
+      return callback(null, perms);
+
+  },
+	grid: {
+		columns: {
+			name: true,
+			email: true,
+			bAdmin: true
 		}
 	},
 	form: {
 		name: {
-			label: 'Name',
 			fieldset: 'Details',
 			helpText: 'The users full name.'
 		},
 		email: {
-			label: 'Email',
 			fieldset: 'Details'
 		},
 		username: {
-			label: 'Username',
 			fieldset: 'Access'
 		},
 		password: {
-			label: 'Password',
 			fieldset: 'Access',
 			widget: linz.formtools.widgets.password()
 		},
 		bAdmin: {
-			label: 'Has admin access?',
 			fieldset: 'Access',
 			helpText: 'This controls if the user has access to admin.'
+		}
+	},
+	overview: {
+		summary: {
+			fields: {
+				name: {
+					renderer: linz.formtools.cellRenderers.defaultRenderer
+				},
+				email: {
+					renderer: linz.formtools.cellRenderers.defaultRenderer
+				}
+			}
 		}
 	},
 	fields: {
