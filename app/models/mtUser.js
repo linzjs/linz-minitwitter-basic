@@ -20,8 +20,8 @@ mtUserSchema.plugin(linz.formtools.plugins.document, {
 	labels: {
 			name: 'Name',
 			email: 'Email',
-			bAdmin: 'has admin access?',
-			username: 'User Name',
+			bAdmin: 'Has admin access?',
+			username: 'Username',
 			password: 'Password'
 	},
 	permissions: function (user, callback) {
@@ -39,6 +39,7 @@ mtUserSchema.plugin(linz.formtools.plugins.document, {
 	grid: {
 		columns: {
 			name: true,
+			username: true,
 			email: true,
 			bAdmin: true
 		}
