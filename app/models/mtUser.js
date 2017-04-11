@@ -36,8 +36,8 @@ mtUserSchema.plugin(linz.formtools.plugins.document, {
       return callback(null, perms);
 
   },
-	grid: {
-		columns: {
+	list: {
+		fields: {
 			name: true,
 			username: true,
 			email: true,
