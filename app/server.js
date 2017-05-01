@@ -5,6 +5,8 @@ linz.on('initialised', require('./app'));
 
 // initialize Linz
 linz.init({
-  mongo: `mongodb://${dbHost}/lmt`,
-	'user model': 'mtUser'
+  options: {
+    mongo: `mongodb://${dbHost}/lmt`,
+  	'user model': 'mtUser'
+  }
 });
